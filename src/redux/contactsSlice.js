@@ -7,28 +7,22 @@ const slice = createSlice({
     items: [],
   },
   reducers: {
-    addContact: {
-      reducer(state, action) {
-        state.items.push(action.payload);
-      },
-      prepare(value) {
-        return {
-          payload: {
-            value,
-            id: nanoid(),
-          },
-        };
-      },
+    addContact(state, action) {
+      state.items.push({
+        id: nanoid(),
+        name: action.payload.value.name,
+        number: action.payload.value.number,
+      });
     },
+  },
 
-    deleteContact(state, action) {
-      const index = state.items.findIndex(
-        (contact) => contact.id === action.payload
-      );
-      if (index !== -1) {
-        state.items.splice(index, 1);
-      }
-    },
+  deleteContact(state, action) {
+    const index = state.items.findIndex(
+      (contact) => contact.id === action.payload
+    );
+    if (index !== -1) {
+      state.items.splice(index, 1);
+    }
   },
 });
 
