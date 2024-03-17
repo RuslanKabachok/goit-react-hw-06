@@ -10,3 +10,12 @@ const store = configureStore({
 });
 
 export default store;
+
+// {
+//   contacts: {
+// 		items: []
+// 	},
+//   filters: {
+// 		name: ""
+// 	}
+// }
