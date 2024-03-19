@@ -10,19 +10,18 @@ const slice = createSlice({
     addContact(state, action) {
       state.items.push({
         id: nanoid(),
-        name: action.payload.value.name,
-        number: action.payload.value.number,
+        name: action.payload.name,
+        number: action.payload.number,
       });
     },
-  },
-
-  deleteContact(state, action) {
-    const index = state.items.findIndex(
-      (contact) => contact.id === action.payload
-    );
-    if (index !== -1) {
-      state.items.splice(index, 1);
-    }
+    deleteContact(state, action) {
+      const index = state.items.findIndex(
+        (contact) => contact.id === action.payload
+      );
+      if (index !== -1) {
+        state.items.splice(index, 1);
+      }
+    },
   },
 });
 

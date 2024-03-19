@@ -14,7 +14,7 @@ function ContactList() {
         <li key={contact.id} className={css.item}>
           <Contact
             info={contact}
-            onDelete={(contact) => {
+            onDelete={() => {
               dispatch(deleteContact(contact.id));
             }}
           />

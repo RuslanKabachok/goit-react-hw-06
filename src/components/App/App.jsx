@@ -1,4 +1,5 @@
 import ContactForm from '../ContactForm/ContactForm';
+import ContactList from '../ContactList/ContactList';
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <div>
         <h1>Phonebook</h1>
         <ContactForm />
+        <ContactList />
       </div>
     </>
   );
