@@ -27,7 +27,3 @@ function SearchBox() {
 }
 
 export default SearchBox;
-
-// const visibleContacts = contacts.filter((contact) =>
-//   contact.name.toLowerCase().includes(filter.toLowerCase())
-// );
