@@ -13,7 +13,7 @@ const slice = createSlice({
 });
 
 export const { changeFilter } = slice.actions;
-
+export const selectNameFilter = (state) => state.filters.name;
 export default slice.reducer;
 
 // const visibleContacts = contacts.filter((contact) =>

@@ -1,8 +1,13 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useId } from 'react';
+import { changeFilter } from '../../redux/filtersSlice';
+import { selectNameFilter } from '../../redux/filtersSlice';
 import css from '../SearchBox/SearchBox.module.css';
 
-function SearchBox({ filter, onFilter }) {
+function SearchBox() {
   const searchId = useId();
+  const dispatch = useDispatch();
+  const filter = useSelector(selectNameFilter);
 
   return (
     <form className={css.form}>
@@ -14,7 +19,7 @@ function SearchBox({ filter, onFilter }) {
         className={css.search}
         value={filter}
         onChange={(e) => {
-          onFilter(e.target.value);
+          dispatch(changeFilter(e.target.value));
         }}
       />
     </form>
@@ -22,3 +27,7 @@ function SearchBox({ filter, onFilter }) {
 }
 
 export default SearchBox;
+
+// const visibleContacts = contacts.filter((contact) =>
+//   contact.name.toLowerCase().includes(filter.toLowerCase())
+// );
