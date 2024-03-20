@@ -1,8 +1,12 @@
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsSlice';
 import css from '../Contact/Contact.module.css';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 
-function Contact({ info, onDelete }) {
+function Contact({ info }) {
+  const dispatch = useDispatch();
+
   return (
     <div className={css.card}>
       <div className={css.container}>
@@ -18,7 +22,8 @@ function Contact({ info, onDelete }) {
       <button
         className={css.btn}
         onClick={() => {
-          onDelete(info.id);
+          dispatch(deleteContact(info.id));
+          // onDelete(info.id);
         }}
       >
         Delete
